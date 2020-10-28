@@ -85,11 +85,14 @@ class vet:
 
     def __init__(self):
         print("\n")
-        self.animal = input("Type of animal?")
-        self.breed = input("Breed?")
-        self.name = input("Name?")
-        self.owner = input("Owner?")
-        self.birthdate = input("Birthdate?")
+        self.animal = input("Type of animal? ")
+        self.breed = input("Breed? ")
+        self.name = input("Name? ")
+        self.owner = input("Owner? ")
+        self.birthdate = input("Birthdate? ")
+
+    def display(self):
+        print
 
 def main():
     while True:
@@ -97,17 +100,17 @@ def main():
         print("1.Enter a new pet")
         print("2.Retrieve a pet")
         print("3.Exit")
-        command = input("")
-        return int(command)        
+        command = int(input(""))
+      
 
         if command == 1:
             # instantiate a new object
             pets.append( vet() )
         elif command == 2:
-            y = input("Which pet?")
+            y = input("Which pet? ")
             for i in pets:
                 if i.name==y:
-                    print()
+                    i.display()
                 else:
                     print("Pet not found, Try again")
                     break
