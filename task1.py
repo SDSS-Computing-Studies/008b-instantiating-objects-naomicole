@@ -92,7 +92,9 @@ class vet:
         self.birthdate = input("Birthdate? ")
 
     def display(self):
-        print
+        output1 = str(self.name) + " " + str(self.animal)
+        output2 = str(self.breed) + " is owned by " + str(self.owner)
+        print(output1 + "\n" + output2)
 
 def main():
     while True:
@@ -106,18 +108,20 @@ def main():
         if command == 1:
             # instantiate a new object
             pets.append( vet() )
-        elif command == 2:
+        elif command == 2: 
             y = input("Which pet? ")
-            for i in pets:
-                if i.name==y:
-                    i.display()
+            length = len(pets)
+            for i in range(0,length):
+                name = pets[i].name
+                if y == name:
+                   pets[i].display
+                   break
                 else:
-                    print("Pet not found, Try again")
-                    break
+                    print("Pet not found. Try again")
         elif command == 3:
             pets.clear()
             print("Thank you!")
             break
-        break
+       
 
 main()
